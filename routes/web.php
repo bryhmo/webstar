@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userscontroller;
+use Illuminate\Support\str;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,12 @@ use App\Http\Controllers\userscontroller;
 | contains the "web" middleware group. Now create something great!
 |
 */
+$data = "hello";
+$data = str::of("hello")
+    ->ucfirst("hello")
+    ->append(' my friend');
+echo $data;
+        
 
 Route::get('/', function () {
     return view('welcome');
