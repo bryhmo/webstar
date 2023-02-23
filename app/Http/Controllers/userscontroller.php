@@ -54,7 +54,47 @@ class userscontroller extends Controller
                     ->afterLast('.');
         //output = png
 
+        //example 6
+        //abbreviate a name 
+        str::of('john')
+            ->limit(1,'.');
+        //output = J.
+
+        //example 7 
+        //change the extension of a file 
+        str::of('my_new.image-file.png')
+            ->beforeLast('.')
+            ->append('.jpg');
+        //output = my_new.image-file.jpg
+
+        //example 8
+        //chsnge a filename to Kebab case and add extension
+        str::of('NewFile')
+            ->prepend('app')
+            ->Kebab()
+            ->finish('.css');
+        //output = app-new-file.css
 
 
+        //Example 9 
+        // get the value between two other strings 
+        str::of('They drink coffee')
+            ->between('They','coffee');
+        //output = drink
+
+        //Example 10
+        //convert class@method to class and method 
+        str::of('usercontroller@show')->parsecallback();
+        //output = ['usercontroller','show']
+
+        //Example 11
+        //pluralize a studly case string 
+        str::of('MyApplication')->pluralStudly();
+        //output = MyApplications
+
+        //Example 12
+        //Generate a random string 
+        str::random(16);
+        //output = random number of 16 characters
     }
 }
