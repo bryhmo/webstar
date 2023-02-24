@@ -48,10 +48,18 @@ echo(str::of('what is this article about?')->title());
 
 route::view('aboutpage','about');
 route::view('contactpage','contact');
+route::view('homepage','home');
 
 //This is passing of a data with routing
+//1.
 route::get('/{name}',function($name){
     echo $name ;
-    return view('about');
+    return view('pagename');
 });
+//2.
+route::get('/{name}',function($name){
+    return view('pagename',['name'=>$name]);
+});
+
+
 
