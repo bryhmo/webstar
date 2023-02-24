@@ -96,5 +96,13 @@ class userscontroller extends Controller
         //Generate a random string 
         str::random(16);
         //output = random number of 16 characters
+
+        //Example 13
+        //convert a string to a title case 
+        str::of('what is this article about?')->title();
+        //What Is This Article About?
+
+        //example 13
+        //
     }
 }

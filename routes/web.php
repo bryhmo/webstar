@@ -44,6 +44,14 @@ Route :: view("loginpage","login");
 
 //echo(str::random(16));
 
+echo(str::of('what is this article about?')->title());
 
+route::view('aboutpage','about');
+route::view('contactpage','contact');
 
+//This is passing of a data with routing
+route::get('/{name}',function($name){
+    echo $name ;
+    return view('about');
+});
 
